@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction</title>
+    <link rel="stylesheet" href="'static', filename='styles.css'">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="header">Enter Item ID | Enter the Available Quantity</h2>
+    
+    <form action="/" method="post" class="form">
+      <input type="number" name="item_id" class="input-item-id">
+      <input type="number" name="avail" class="input-avail">
+      <input type="submit" value="Predict" class="btn-predict">
+    </form>
+
+    {% if prediction %}
+    <h3 class="prediction-result">{{ prediction }}</h3>
+    {% endif %}
+
+    {% if graph %}
+    <div class="graph">
+        <img src="{{ graph }}" alt="Sales vs Date Graph">
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
